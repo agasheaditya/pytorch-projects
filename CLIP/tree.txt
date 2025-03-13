@@ -1,0 +1,51 @@
+Folder PATH listing for volume New Volume
+Volume serial number is DAC5-FC03
+D:.
+¦   .coverage
+¦   NST-P1.ipynb
+¦   readme.md
+¦   test_labels.json
+¦   train_labels.json
+¦               
++---assets
+¦   ¦   VGG-Style features 1.jpg
+¦   ¦   VGG-Style features 2.jpg
+¦   ¦   VGG-Style features 3.jpg
+¦   ¦   VGG-Style features 4.jpg
+¦   ¦   VGG-Style features 5.jpg
+¦   ¦   
++---recycle
+¦   ¦   feature_extractor.py
+¦   ¦   loader.py
+¦   ¦   prepare-data.ipynb
+¦   ¦   preprocess.ipynb
+¦   ¦   style_transfer_model.pth
+¦   ¦           
++---tests
+¦   ¦   test.jpg
+¦   ¦   test_preprocess.py        
++---wikiart_subset
+¦   ¦   classes.csv
+¦   ¦   image_labels.json
+¦   ¦       
+¦   +---Cubism
+¦   ¦       Cubism-0.jpg
+¦   ¦       Cubism-1.jpg
+¦   ¦       Cubism-10.jpg
+¦   ¦       
+¦   +---Fauvism
+¦   ¦       Fauvism-0.jpg
+¦   ¦       Fauvism-1.jpg
+¦   ¦       Fauvism-10.jpg
+¦   ¦       
+¦   +---Minimalism
+¦   ¦       Minimalism-0.jpg
+¦   ¦       Minimalism-1.jpg
+¦   ¦       Minimalism-10.jpg
+¦   ¦       
+¦   +---Ukiyo_e
+¦           Ukiyo_e-0.jpg
+¦           Ukiyo_e-1.jpg
+¦           Ukiyo_e-10.jpg
+¦           Ukiyo_e-100.jpg
+        
