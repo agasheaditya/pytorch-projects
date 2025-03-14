@@ -100,19 +100,9 @@ Data Flow Diagram
                                                      |                       |
                                                      +-----------------------+
 ```
+---
 
 #### **Explanation**
-
-Content Image:
-Load and preprocess the content image (resize, normalize).
-Encode the image into a CLIP embedding.
-Text Prompt :
-Tokenize the text prompt and encode it into a CLIP embedding.
-Combine Embeddings :
-Pass the content image and text embedding into the U-Net generator.
-The generator combines the two inputs to produce a styled image.
-Output :
-The styled image is denormalized and converted back to a PIL image for visualization.
 --- 
 ### **6. Working of the Code Along with Algorithm/Model Used**
 Algorithm
