@@ -1,3 +1,6 @@
+# **Text2Art**: Transforming words into masterpieces
+---
+
 ### **1. Aim**
 The aim of this project is to build a text-driven neural style transfer model using CLIP (Contrastive Language–Image Pretraining) and a U-Net-based generator. The goal is to:
 
@@ -49,6 +52,7 @@ wikiart_subset/
         Ukiyo_e-1.jpg
         ...
 ```
+#### **Metadata** : Each image has a corresponding text description stored in image_labels.json. For example:
 
 ```md
 {
@@ -57,7 +61,7 @@ wikiart_subset/
 }
 ```
 
-**Preprocessing**
+#### **Preprocessing**
 Images are resized to 256x256 pixels.
 Images are normalized using the ImageNet mean ([0.485, 0.456, 0.406]) and standard deviation ([0.229, 0.224, 0.225]).
 Text descriptions are tokenized and encoded into CLIP embeddings.
@@ -106,7 +110,7 @@ Pass the content image and text embedding into the U-Net generator.
 The generator combines the two inputs to produce a styled image.
 Output :
 The styled image is denormalized and converted back to a PIL image for visualization.
-
+--- 
 ### **6. Working of the Code Along with Algorithm/Model Used**
 Algorithm
 Input :
