@@ -160,5 +160,7 @@ Extend the model to handle multiple text prompts or style references.
 
 ## **References:**
 CLIP Paper: https://arxiv.org/pdf/2103.00020
+
 OpenAI Repo: https://github.com/openai/CLIP
+
 Zero-Shot Text-Guided Object Generation with Dream Fields: https://arxiv.org/pdf/2112.01455v2
