@@ -52,7 +52,8 @@ wikiart_subset/
         Ukiyo_e-1.jpg
         ...
 ```
-#### **Metadata** : Each image has a corresponding text description stored in image_labels.json. For example:
+#### **Metadata** : 
+    Each image has a corresponding text description stored in image_labels.json. For example:
 
 ```md
 {
@@ -99,8 +100,10 @@ Data Flow Diagram
                                                      |                       |
                                                      +-----------------------+
 ```
-**Explanation**
-Content Image :
+
+#### **Explanation**
+
+Content Image:
 Load and preprocess the content image (resize, normalize).
 Encode the image into a CLIP embedding.
 Text Prompt :
