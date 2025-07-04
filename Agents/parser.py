@@ -1,7 +1,10 @@
 from bs4 import BeautifulSoup
-import re
+import pandas as pd
+from io import StringIO
 import base64
 import os
+import json
+import re
 
 
 def extract_code_cells(soup):
@@ -21,17 +24,26 @@ def extract_output_cells(soup):
     """Extract all output cells from the notebook."""
     output_cells = []
     for wrapper in soup.find_all("div", class_=re.compile(r"jp-Cell-outputWrapper")):
-        output_block = wrapper.find("pre") or wrapper.find("img")
-        if output_block:
-            if output_block.name == "img":
-                # This is an image output
-                output_cells.append(str(output_block))
-            else:
-                # This is text output
-                output_cells.append(output_block.get_text().strip())
+        # Check if this is a dataframe output
+        html_table = wrapper.find("table", class_="dataframe")
+        if html_table:
+            # Convert HTML table to pandas DataFrame
+            table_html = str(html_table)
+            df = pd.read_html(StringIO(table_html))[0]
+            # Convert DataFrame to clean string representation
+            output = "DataFrame Output:\n" + df.head().to_string()
+            output_cells.append(output)
         else:
-            # Fallback: capture raw HTML for rich outputs
-            output_cells.append(str(wrapper).strip())
+            # Try to get plain text output
+            pre_tag = wrapper.find("pre")
+            img_tag = wrapper.find("img")
+            if pre_tag:
+                output_cells.append(pre_tag.get_text().strip())
+            elif img_tag:
+                output_cells.append(str(img_tag))
+            else:
+                # Fallback: capture raw HTML for rich outputs
+                output_cells.append(str(wrapper).strip())
     return output_cells
 
 
@@ -62,9 +74,9 @@ def extract_and_save_images(html_path, output_folder="extracted_images"):
     return image_paths
 
 
-def parse_notebook(html_path):
+def parse_notebook(html_path, output_json="parsed_output.json"):
     """
-    Main function to parse notebook and link code with output (text or image).
+    Main function to parse notebook and save results in JSON format.
     """
     with open(html_path, "r", encoding="utf-8") as f:
         html_content = f.read()
@@ -80,23 +92,26 @@ def parse_notebook(html_path):
     image_index = 0
 
     for code in code_cells:
-        if len(output_cells) == 0:
+        if not output_cells:
             break
 
         output = output_cells.pop(0)
 
         # Check if output is an image tag
         if output.startswith("<img"):
+            item = {"code": code,"output": "","image_path": image_paths[image_index] if image_index < len(image_paths) else None}
             if image_index < len(image_paths):
-                parsed_data.append({"code": code,"output_text": "","image_path": image_paths[image_index]})
                 image_index += 1
-            else:
-                parsed_data.append({"code": code,"output_text": "","image_path": None})
-
         else:
-            # It's regular text output
-            parsed_data.append({"code": code,"output_text": output,"image_path": None})
+            item = {"code": code,"output": output,"image_path": None}
 
+        parsed_data.append(item)
+
+    # Save to JSON
+    with open(output_json, "w", encoding="utf-8") as f:
+        json.dump(parsed_data, f, indent=2)
+
+    print(f"\nParsed data saved to {output_json}")
     return parsed_data
 
 
@@ -107,9 +122,9 @@ if __name__ == "__main__":
         print(f"\n--- Code Block {idx + 1} ---")
         print("CODE:")
         print(item["code"])
-        if item["output_text"]:
+        if item["output"]:
             print("\nOUTPUT TEXT:")
-            print(item["output_text"])
+            print(item["output"])
         if item["image_path"]:
             print("\nIMAGE SAVED AT:")
             print(item["image_path"])
