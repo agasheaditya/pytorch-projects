@@ -1,0 +1,94 @@
+{
+  "Rubric": {
+    "Sections": [
+      {
+        "Section": "Exploratory Data Analysis",
+        "Points": 8,
+        "What good looks like": "1) Defined problem statement, Observations on shape of data, data types of various attributes, statistical summary.(2)\n2) Univariate and Bivariate analysis (variable distributions, interactions between variables) to understand the relationships in data beyond the set of questions already provided(2)\n3) The analysis includes answers for Insight-based questions asked (2)\nIllustrate the insights based on EDA:(2)\n1) Commented on range of attributes, outliers of various attributes.\n2) Commented on the distribution of the variables and potential fixes for better modelling.\n3) Key insights shared from univariate and bivariate analysis.",
+        "What average looks like": "1) Definition of problem, Observations on shape of data, data types of various attributes, statistical summary.\n2) The analysis includes answers for Insight-based questions.\nIllustrate the insights based on EDA:\n1) Commented on range of attributes, outliers of various attributes 2) Insights provided are very brief or missing for plots in univariate and bivariate analysis",
+        "What poor looks like": "1) Definition of problem(as per given problem statements) and Observations on data types of various attributes, statistical summary.\nIllustrate the insights based on EDA:\n1- Univariates done with no comments 2- A few random bivariate done with little commentary",
+        "What nothing looks like": "1) No EDA is done 2) Did not comment on range of attributes, outliers of various attributes 3) Did not provide insights for any plot",
+        "Weightage": "13.33%"
+      },
+      {
+        "Section": "Data Preprocessing",
+        "Points": 5,
+        "What good looks like": "1) Dropped case_id column with a reason for the same.(1)\n2) Identified and treated the negative values in number of employees column, 3(2) )Identified outliers and provided comments on it - Treatment is not necessary but a valid reasoning should be provided for treatment/non-treatment.(1)\n4) Prepared the data by dividing it into train, test, and validation sets(1)",
+        "What average looks like": "1) Dropped case_id column with a reason for the same.\n2) Identified and treated the negative values in number of employees column.\n3) Identified outliers but no comments are provided",
+        "What poor looks like": "1) Dropped case_id column with a reason for the same.\n2) Identified and treated the negative values in number of employees column.",
+        "What nothing looks like": "No data pre-processing done",
+        "Weightage": "8.33%"
+      },
+      {
+        "Section": "Model Building-Original Data",
+        "Points": 6,
+        "What good looks like": "1) Choose the metric of choice with proper rationale[1]\n2) Build 5 classification models and train them using the original train data[1x5]",
+        "What average looks like": "1) Build 3-5 classification models and trained them using the original train data",
+        "What poor looks like": "1) Build< 3 classification models and trained them using the original train data",
+        "What nothing looks like": "1) Did not train models with default hyperparameters or 2) Trained regressors instead of classifiers or 3) Did not run the cell/ result is an error",
+        "Weightage": "10.00%"
+      },
+      {
+        "Section": "Model Building-Oversampled Data",
+        "Points": 6,
+        "What good looks like": "1) Oversample the train data[1]\n2) Build 5 classification models and train them using oversampled data[1x5]",
+        "What average looks like": "1) Oversampled the train data\n2) Build 3-5 classification models and trained them using oversampled data",
+        "What poor looks like": "1) Oversampled the train data\n2) Build less than 3 classification models and trained them using oversampled data",
+        "What nothing looks like": "1) Did not train models with default hyperparameters or 2) Trained regressors instead of classifiers or 3) Did not run the cell/ result is an error 4) Did not choose any scorer(or chose accuracy) to tune the models",
+        "Weightage": "10.00%"
+      },
+      {
+        "Section": "Model Building-Undersampled Data",
+        "Points": 6,
+        "What good looks like": "1) Undersample the train data[1]\n2) Build 5 classification models and train them using undersampled data[1x5]",
+        "What average looks like": "1) Undersampled the train data\n2) Build 3-5 classification models and trained them using undersampled data",
+        "What poor looks like": "1) Undersampled the train data\n2) Build less than 3 classification models and trained them using undersampled data",
+        "What nothing looks like": "1) Did not train models with default hyperparameters or 2) Trained regressors instead of classifiers or 3) Did not run the cell/ result is an error",
+        "Weightage": "10.00%"
+      },
+      {
+        "Section": "Hyperparameter Tuning",
+        "Points": 10,
+        "What good looks like": "1) Choose atleast 3 best performing models among all the models built previously and mention proper reasoning for choosing those models[1]\n3) Tune the chosen models with metric of interest[2.5x3]\n4) Check the performance of the tuned models[0.5x3]",
+        "What average looks like": "1) Choose atleast 3 models\n2) Tune the chosen models",
+        "What poor looks like": "1) Choose and tune less than 3 models obtained above with metric of interest",
+        "What nothing looks like": "1) Did not train models with default hyperparameters or 2) Trained regressors instead of classifiers or 3) Did not run the cell/ result is an error 4) Did not choose any scorer(or chose accuracy) to tune the models",
+        "Weightage": "16.67%"
+      },
+      {
+        "Section": "Model Performances",
+        "Points": 5,
+        "What good looks like": "1) Compare model performances of tuned models[2]\n2) Choose best model[1]\n3) Find test performance[1]\n4) Metric of choice> 0.8 on the test set [1]",
+        "What average looks like": "1) Compare model performances of tuned models\n2) Choose best model\n3) Find test performance\n4) 0.75< Metric of choice< 0.8 on test data",
+        "What poor looks like": "1) Choose best model\n2) Metric of choice< 0.75 on test data",
+        "What nothing looks like": "",
+        "Weightage": "8.33%"
+      },
+      {
+        "Section": "Actionable Insights & Recommendations",
+        "Points": 6,
+        "What good looks like": "1) 3-4 Conclusions provided on the model performance comparison and EDA, key takeaways in form of important features identified.(4)\n2) 2-3 Recommendations mentioned (2)\n[Recommendations can also include points on additional data sources for further analysis, model implementation in real world, potential business benefits from improving the model, etc.]",
+        "What average looks like": "1) 1-2 Conclusions provided on the model performance comparison and EDA, key takeaways in form of important features identified.\n2) 1 Recommendation mentioned",
+        "What poor looks like": "1) Any Conclusions provided on the model performance comparison and EDA\n2) No recommendations",
+        "What nothing looks like": "None of the steps are performed.",
+        "Weightage": "10.00%"
+      },
+      {
+        "Section": "Presentation/ Notebook-Overall quality",
+        "Points": 8,
+        "What good looks like": "1) Clear structure and flow- everything sits well in a story\n2) Crispness(Not too many words, just enough to keep the focus on key things/points)\n3) Visual appeal(Use of charts, colors, diagrams, format, symmetry, informative visualizations that are easy to interpret)\nOR\n1) Well structured notebook with a logical flow\n2) Clean and well commented code",
+        "What average looks like": "1) There is structure and flow but some bits are jumbled\n2) Points are made but in too many words\n3) Lesser charts, format is not the cleanest\nOR\n1) There is structure and flow but some bits are missing\n2) Some of the code is commented\n* If any section is missing and points have been deducted for the same in a previous section, then no points should be deducted in this section",
+        "What poor looks like": "1) No structure or flow\n2) Only a few points are covered, story is not complete\n3) Not many visuals used\nOR\n1) no structure or flow\n2) no comments in the code",
+        "What nothing looks like": "No report OR No code",
+        "Weightage": "13.33%"
+      }
+    ],
+    "Total Points": 60,
+    "Grade Distribution": {
+      "Excellent": "80-100%",
+      "Good": "60-80%",
+      "Poor": "<60%",
+      "Fail": "0"
+    }
+  }
+}
