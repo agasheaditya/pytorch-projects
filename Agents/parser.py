@@ -115,6 +115,37 @@ def parse_notebook(html_path, output_json="parsed_output.json"):
     return parsed_data
 
 
+def generate_markdown(parsed_data, output_md="submission_report.md"):
+    """
+    Generates a Markdown file that preserves the structure of the original notebook.
+    
+    Args:
+        parsed_data (list): List of dictionaries with 'code', 'output', and 'image_path'
+        output_md (str): Path to save the generated Markdown file
+    """
+    with open(output_md, "w", encoding="utf-8") as f:
+        for idx, block in enumerate(parsed_data):
+            # Write code block
+            f.write(f"### Code Block {idx + 1}\n")
+            f.write("```python\n")
+            f.write(block["code"] + "\n")
+            f.write("```\n\n")
+
+            # Write output
+            if block["output"]:
+                f.write("#### Output:\n")
+                f.write("```\n")
+                f.write(block["output"] + "\n")
+                f.write("```\n\n")
+
+            # Write image if present
+            if block["image_path"]:
+                f.write("#### Output Image:\n")
+                f.write(f"![Generated Plot]({block['image_path']})\n\n")
+
+    print(f"\nMarkdown report saved to {output_md}")
+
+
 # Example usage
 if __name__ == "__main__":
     result = parse_notebook("data/submissions/sample-submission-1.html")
@@ -128,3 +159,5 @@ if __name__ == "__main__":
         if item["image_path"]:
             print("\nIMAGE SAVED AT:")
             print(item["image_path"])
+    generate_markdown(result, output_md="submission_report.md")
+    
