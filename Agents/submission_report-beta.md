@@ -1,4 +1,4 @@
-# Student Submission Report
+#Student Submission Report
 
 This report reconstructs the Jupyter Notebook submission from parsed HTML.
 
@@ -109,7 +109,6 @@ data.tail(5)
 ```
 
 #### Output:
-```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 25480 entries, 0 to 25479
 Data columns (total 12 columns):
@@ -129,7 +128,6 @@ Data columns (total 12 columns):
  11  case_status            25480 non-null  object 
 dtypes: float64(1), int64(2), object(9)
 memory usage: 2.3+ MB
-```
 
 ---
 
@@ -179,7 +177,6 @@ print(f"Number of negative entries: {negative_count}")
 ```
 
 #### Output:
-```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 25480 entries, 0 to 25479
 Data columns (total 12 columns):
@@ -199,7 +196,6 @@ Data columns (total 12 columns):
  11  case_status            25480 non-null  category
 dtypes: category(8), float64(2), int64(1), object(1)
 memory usage: 996.7+ KB
-```
 
 ---
 
@@ -210,7 +206,6 @@ data['no_of_employees'] = data['no_of_employees'].apply(lambda x: x if x >= 0 el
 ```
 
 #### Output:
-```
 Value counts for column: continent
 continent
 Asia             16861
@@ -269,7 +264,6 @@ case_status
 Certified    17018
 Denied        8462
 Name: count, dtype: int64
-```
 
 ---
 
@@ -280,7 +274,7 @@ print(f"Number of negative entries: {negative_count}")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_1.png
+![Generated Plot](extracted_images_beta\image_1.png
 
 ---
 
@@ -297,13 +291,11 @@ data['case_status'] = data['case_status'].astype('category')
 ```
 
 #### Output:
-```
 <ipython-input-202-1e58b03272cc>:22: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   ax = sns.countplot(
-```
 
 ---
 
@@ -329,7 +321,7 @@ for col in categorical_cols:
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_2.png
+![Generated Plot](extracted_images_beta\image_2.png
 
 ---
 
@@ -368,13 +360,11 @@ def histogram_boxplot(data, feature, figsize=(15, 10), kde=False, bins=None):
 ```
 
 #### Output:
-```
 <ipython-input-202-1e58b03272cc>:22: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   ax = sns.countplot(
-```
 
 ---
 
@@ -451,7 +441,7 @@ histogram_boxplot(data, "education_of_employee", figsize=(15, 10))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_3.png
+![Generated Plot](extracted_images_beta\image_3.png
 
 ---
 
@@ -461,13 +451,11 @@ labeled_barplot(data, 'education_of_employee')
 ```
 
 #### Output:
-```
 <ipython-input-202-1e58b03272cc>:22: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   ax = sns.countplot(
-```
 
 ---
 
@@ -493,7 +481,7 @@ histogram_boxplot(data, "region_of_employment", figsize=(15, 10))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_4.png
+![Generated Plot](extracted_images_beta\image_4.png
 
 ---
 
@@ -503,13 +491,11 @@ labeled_barplot(data, 'region_of_employment')
 ```
 
 #### Output:
-```
 <ipython-input-202-1e58b03272cc>:22: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   ax = sns.countplot(
-```
 
 ---
 
@@ -535,7 +521,6 @@ histogram_boxplot(data, "has_job_experience", figsize=(15, 10))
 ```
 
 #### Output:
-```
 <ipython-input-215-d405489ef7b9>:31: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
@@ -546,7 +531,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(
-```
 
 ---
 
@@ -556,7 +540,6 @@ labeled_barplot(data, 'has_job_experience')
 ```
 
 #### Output:
-```
 case_status                0     1    All
 education_of_employee                    
 All                    17018  8462  25480
@@ -565,7 +548,6 @@ All                    17018  8462  25480
 3                       7575  2059   9634
 1                       1912   280   2192
 ------------------------------------------------------------------------------------------------------------------------
-```
 
 ---
 
@@ -576,7 +558,6 @@ print(mapping)
 ```
 
 #### Output:
-```
 <ipython-input-215-d405489ef7b9>:31: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
@@ -587,7 +568,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(
-```
 
 ---
 
@@ -599,7 +579,6 @@ histogram_boxplot(data, "case_status", figsize=(15, 10))
 ```
 
 #### Output:
-```
 case_status        0     1    All
 continent                        
 All            17018  8462  25480
@@ -610,7 +589,6 @@ South America    493   359    852
 Africa           397   154    551
 Oceania          122    70    192
 ------------------------------------------------------------------------------------------------------------------------
-```
 
 ---
 
@@ -620,7 +598,6 @@ labeled_barplot(data, 'case_status')
 ```
 
 #### Output:
-```
 <ipython-input-215-d405489ef7b9>:31: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
@@ -631,7 +608,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(
-```
 
 ---
 
@@ -642,14 +618,12 @@ print(mapping)
 ```
 
 #### Output:
-```
 case_status             0     1    All
 has_job_experience                    
 All                 17018  8462  25480
 0                    5994  4684  10678
 1                   11024  3778  14802
 ------------------------------------------------------------------------------------------------------------------------
-```
 
 ---
 
@@ -702,7 +676,6 @@ def distribution_plot_wrt_target(data, predictor, target):
 ```
 
 #### Output:
-```
 <ipython-input-215-d405489ef7b9>:31: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
@@ -713,7 +686,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(
-```
 
 ---
 
@@ -746,7 +718,6 @@ def stacked_barplot(data, predictor, target):
 ```
 
 #### Output:
-```
 <ipython-input-215-d405489ef7b9>:31: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
@@ -757,7 +728,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(
-```
 
 ---
 
@@ -767,7 +737,6 @@ distribution_plot_wrt_target(data, "education_of_employee", "case_status")
 ```
 
 #### Output:
-```
 <ipython-input-215-d405489ef7b9>:31: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
@@ -778,7 +747,6 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
 
   sns.boxplot(
-```
 
 ---
 
@@ -788,7 +756,6 @@ stacked_barplot(data, "education_of_employee", "case_status")
 ```
 
 #### Output:
-```
 case_status       0     1    All
 unit_of_wage                    
 All           17018  8462  25480
@@ -797,7 +764,6 @@ Hour            747  1410   2157
 Week            169   103    272
 Month            55    34     89
 ------------------------------------------------------------------------------------------------------------------------
-```
 
 ---
 
@@ -822,7 +788,7 @@ stacked_barplot(data, "continent", "case_status")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_5.png
+![Generated Plot](extracted_images_beta\image_5.png
 
 ---
 
@@ -832,7 +798,7 @@ distribution_plot_wrt_target(data, "has_job_experience", "case_status")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_6.png
+![Generated Plot](extracted_images_beta\image_6.png
 
 ---
 
@@ -842,7 +808,7 @@ stacked_barplot(data, "has_job_experience", "case_status")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_7.png
+![Generated Plot](extracted_images_beta\image_7.png
 
 ---
 
@@ -895,7 +861,6 @@ stacked_barplot(data, "unit_of_wage", "case_status")
 ```
 
 #### Output:
-```
 Shape of training set: (20384, 16)
 Shape of test set: (5096, 16) 
 
@@ -910,7 +875,6 @@ case_status
 0    66.797488
 1    33.202512
 Name: proportion, dtype: float64
-```
 
 ---
 
@@ -935,7 +899,7 @@ sns.boxplot(data=data, x='case_status', y='education_of_employee');
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_8.png
+![Generated Plot](extracted_images_beta\image_8.png
 
 ---
 
@@ -960,7 +924,7 @@ sns.boxplot(data=data, x='unit_of_wage', y='case_status');
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_9.png
+![Generated Plot](extracted_images_beta\image_9.png
 
 ---
 
@@ -984,7 +948,7 @@ y = data["case_status"]
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_10.png
+![Generated Plot](extracted_images_beta\image_10.png
 
 ---
 
@@ -1000,10 +964,8 @@ X.head()
 ```
 
 #### Output:
-```
 DecisionTreeClassifier(max_depth=np.int64(8), max_leaf_nodes=np.int64(10),
                        min_samples_split=np.int64(10), random_state=42)
-```
 
 ---
 
@@ -1014,7 +976,7 @@ y.head()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_11.png
+![Generated Plot](extracted_images_beta\image_11.png
 
 ---
 
@@ -1041,7 +1003,7 @@ print(100*y_test.value_counts(normalize=True))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_12.png
+![Generated Plot](extracted_images_beta\image_12.png
 
 ---
 
@@ -1124,7 +1086,7 @@ dtree1.fit(X_train, y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_13.png
+![Generated Plot](extracted_images_beta\image_13.png
 
 ---
 
@@ -1148,7 +1110,7 @@ dtree1_train_perf
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_14.png
+![Generated Plot](extracted_images_beta\image_14.png
 
 ---
 
@@ -1208,7 +1170,7 @@ plt.show()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_15.png
+![Generated Plot](extracted_images_beta\image_15.png
 
 ---
 
@@ -1272,7 +1234,7 @@ dtree2.fit(X_train, y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_16.png
+![Generated Plot](extracted_images_beta\image_16.png
 
 ---
 
@@ -1308,7 +1270,7 @@ confusion_matrix_sklearn(dtree2, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_17.png
+![Generated Plot](extracted_images_beta\image_17.png
 
 ---
 
@@ -1334,7 +1296,7 @@ bagging_estimator.fit(X_train,y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_18.png
+![Generated Plot](extracted_images_beta\image_18.png
 
 ---
 
@@ -1372,7 +1334,7 @@ confusion_matrix_sklearn(bagging_estimator, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_19.png
+![Generated Plot](extracted_images_beta\image_19.png
 
 ---
 
@@ -1398,7 +1360,7 @@ rf_estimator.fit(X_train,y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_20.png
+![Generated Plot](extracted_images_beta\image_20.png
 
 ---
 
@@ -1423,7 +1385,6 @@ rf_estimator_train_perf
 ```
 
 #### Output:
-```
 XGBClassifier(base_score=None, booster=None, callbacks=None,
               colsample_bylevel=None, colsample_bynode=None,
               colsample_bytree=None, device=None, early_stopping_rounds=None,
@@ -1435,7 +1396,6 @@ XGBClassifier(base_score=None, booster=None, callbacks=None,
               max_leaves=None, min_child_weight=None, missing=nan,
               monotone_constraints=None, multi_strategy=None, n_estimators=None,
               n_jobs=None, num_parallel_tree=None, random_state=1, ...)
-```
 
 ---
 
@@ -1446,7 +1406,7 @@ confusion_matrix_sklearn(rf_estimator, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_21.png
+![Generated Plot](extracted_images_beta\image_21.png
 
 ---
 
@@ -1471,7 +1431,7 @@ adaboost.fit(X_train,y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_22.png
+![Generated Plot](extracted_images_beta\image_22.png
 
 ---
 
@@ -1509,7 +1469,6 @@ confusion_matrix_sklearn(adaboost, X_test, y_test)
 ```
 
 #### Output:
-```
 Target value ratio in y
 case_status
 0    0.667896
@@ -1534,7 +1493,6 @@ case_status
 1    0.332025
 Name: proportion, dtype: float64
 ********************************************************************************
-```
 
 ---
 
@@ -1547,7 +1505,6 @@ adaboost_test_perf
 ```
 
 #### Output:
-```
 Before OverSampling, count of label '1': 4231
 Before OverSampling, count of label '0': 8509 
 
@@ -1556,7 +1513,6 @@ After OverSampling, count of label '0': 8509
 
 After OverSampling, the shape of train_X: (17018, 16)
 After OverSampling, the shape of train_y: (17018,)
-```
 
 ---
 
@@ -1567,10 +1523,8 @@ gboost.fit(X_train,y_train)
 ```
 
 #### Output:
-```
 DecisionTreeClassifier(max_depth=np.int64(8), max_leaf_nodes=np.int64(10),
                        min_samples_split=np.int64(10), random_state=42)
-```
 
 ---
 
@@ -1581,10 +1535,8 @@ confusion_matrix_sklearn(gboost, X_train, y_train)
 ```
 
 #### Output:
-```
 0.7313432835820896
 0.551792044111855
-```
 
 ---
 
@@ -1610,7 +1562,7 @@ confusion_matrix_sklearn(gboost, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_23.png
+![Generated Plot](extracted_images_beta\image_23.png
 
 ---
 
@@ -1636,10 +1588,8 @@ xgboost.fit(X_train, y_train)
 ```
 
 #### Output:
-```
 0.9734398871782818
 0.435998424576605
-```
 
 ---
 
@@ -1665,7 +1615,7 @@ xgboost_train_perf
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_24.png
+![Generated Plot](extracted_images_beta\image_24.png
 
 ---
 
@@ -1691,10 +1641,8 @@ xgboost_test_perf
 ```
 
 #### Output:
-```
 0.9998824773768951
 0.49192595510043324
-```
 
 ---
 
@@ -1741,7 +1689,7 @@ print("*" * 80)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_25.png
+![Generated Plot](extracted_images_beta\image_25.png
 
 ---
 
@@ -1772,10 +1720,8 @@ print("After OverSampling, the shape of train_y: {} \n".format(y_train_over.shap
 ```
 
 #### Output:
-```
 0.7453284757315783
 0.5265852697912564
-```
 
 ---
 
@@ -1800,7 +1746,7 @@ pred_val = dtree2.predict(X_val)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_26.png
+![Generated Plot](extracted_images_beta\image_26.png
 
 ---
 
@@ -1829,10 +1775,8 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output:
-```
 0.7630743918204255
 0.5246159905474597
-```
 
 ---
 
@@ -1861,7 +1805,7 @@ bagging_estimator.fit(X_train_over, y_train_over)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_27.png
+![Generated Plot](extracted_images_beta\image_27.png
 
 ---
 
@@ -1873,7 +1817,6 @@ pred_val = bagging_estimator.predict(X_val)
 ```
 
 #### Output:
-```
 XGBClassifier(base_score=None, booster=None, callbacks=None,
               colsample_bylevel=None, colsample_bynode=None,
               colsample_bytree=None, device=None, early_stopping_rounds=None,
@@ -1885,7 +1828,6 @@ XGBClassifier(base_score=None, booster=None, callbacks=None,
               max_leaves=None, min_child_weight=None, missing=nan,
               monotone_constraints=None, multi_strategy=None, n_estimators=None,
               n_jobs=None, num_parallel_tree=None, random_state=1, ...)
-```
 
 ---
 
@@ -1897,10 +1839,8 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output:
-```
 0.8419320719238453
 0.4970460811343048
-```
 
 ---
 
@@ -1933,7 +1873,7 @@ plt.show()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_28.png
+![Generated Plot](extracted_images_beta\image_28.png
 
 ---
 
@@ -1944,7 +1884,6 @@ rf_estimator.fit(X_train_over, y_train_over)
 ```
 
 #### Output:
-```
 Before Under Sampling, count of label '1': 4231
 Before Under Sampling, count of label '0': 8509 
 
@@ -1953,7 +1892,6 @@ After Under Sampling, count of label '0': 4231
 
 After Under Sampling, the shape of train_X: (8462, 16)
 After Under Sampling, the shape of train_y: (8462,)
-```
 
 ---
 
@@ -1965,10 +1903,8 @@ pred_val = rf_estimator.predict(X_val)
 ```
 
 #### Output:
-```
 DecisionTreeClassifier(max_depth=np.int64(8), max_leaf_nodes=np.int64(10),
                        min_samples_split=np.int64(10), random_state=42)
-```
 
 ---
 
@@ -1980,10 +1916,8 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output:
-```
 0.6908532261876625
 0.6738873572272548
-```
 
 ---
 
@@ -2016,7 +1950,7 @@ plt.show()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_29.png
+![Generated Plot](extracted_images_beta\image_29.png
 
 ---
 
@@ -2041,10 +1975,8 @@ pred_val = adaboost.predict(X_val)
 ```
 
 #### Output:
-```
 0.9718742614039234
 0.6309570697124852
-```
 
 ---
 
@@ -2073,7 +2005,7 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_30.png
+![Generated Plot](extracted_images_beta\image_30.png
 
 ---
 
@@ -2102,10 +2034,8 @@ gboost.fit(X_train_over, y_train_over)
 ```
 
 #### Output:
-```
 1.0
 0.6849153209925167
-```
 
 ---
 
@@ -2131,7 +2061,7 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_31.png
+![Generated Plot](extracted_images_beta\image_31.png
 
 ---
 
@@ -2164,10 +2094,8 @@ plt.show()
 ```
 
 #### Output:
-```
 0.6589458756795084
 0.650649862150453
-```
 
 ---
 
@@ -2192,7 +2120,7 @@ pred_val = xgboost.predict(X_val)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_32.png
+![Generated Plot](extracted_images_beta\image_32.png
 
 ---
 
@@ -2221,10 +2149,8 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output:
-```
 0.6974710470337981
 0.6612839700669555
-```
 
 ---
 
@@ -2254,7 +2180,7 @@ X_train_un, y_train_un = rus.fit_resample(X_train, y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_33.png
+![Generated Plot](extracted_images_beta\image_33.png
 
 ---
 
@@ -2271,7 +2197,6 @@ print("After Under Sampling, the shape of train_y: {} \n".format(y_train_un.shap
 ```
 
 #### Output:
-```
 XGBClassifier(base_score=None, booster=None, callbacks=None,
               colsample_bylevel=None, colsample_bynode=None,
               colsample_bytree=None, device=None, early_stopping_rounds=None,
@@ -2283,7 +2208,6 @@ XGBClassifier(base_score=None, booster=None, callbacks=None,
               max_leaves=None, min_child_weight=None, missing=nan,
               monotone_constraints=None, multi_strategy=None, n_estimators=None,
               n_jobs=None, num_parallel_tree=None, random_state=1, ...)
-```
 
 ---
 
@@ -2294,10 +2218,8 @@ dtree2.fit(X_train_un, y_train_un)
 ```
 
 #### Output:
-```
 0.8922240605057906
 0.6703426545884207
-```
 
 ---
 
@@ -2323,7 +2245,7 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_34.png
+![Generated Plot](extracted_images_beta\image_34.png
 
 ---
 
@@ -2338,11 +2260,9 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output:
-```
 Fitting 5 folds for each of 30 candidates, totalling 150 fits
 CPU times: user 360 ms, sys: 94.1 ms, total: 454 ms
 Wall time: 5.45 s
-```
 
 ---
 
@@ -2371,10 +2291,8 @@ bagging_estimator.fit(X_train_un, y_train_un)
 ```
 
 #### Output:
-```
 DecisionTreeClassifier(criterion='entropy', max_depth=10, min_samples_leaf=2,
                        min_samples_split=5, splitter='random')
-```
 
 ---
 
@@ -2386,7 +2304,6 @@ pred_val = bagging_estimator.predict(X_val)
 ```
 
 #### Output:
-```
 Recall on train and validation set
 0.5566060033089104
 0.49940921622686096
@@ -2398,7 +2315,6 @@ Precision on train and validation set
 Accuracy on train and validation set
 0.7620094191522763
 0.7373103087388801
-```
 
 ---
 
@@ -2445,10 +2361,8 @@ plt.show()
 ```
 
 #### Output:
-```
 /usr/local/lib/python3.11/dist-packages/sklearn/ensemble/_weight_boosting.py:519: FutureWarning: The parameter 'algorithm' is deprecated in 1.6 and has no effect. It will be removed in version 1.8.
   warnings.warn(
-```
 
 ---
 
@@ -2473,11 +2387,9 @@ pred_val = rf_estimator.predict(X_val)
 ```
 
 #### Output:
-```
 Fitting 5 folds for each of 30 candidates, totalling 150 fits
 CPU times: user 3.55 s, sys: 598 ms, total: 4.14 s
 Wall time: 5min 30s
-```
 
 ---
 
@@ -2506,11 +2418,9 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output:
-```
 GradientBoostingClassifier(learning_rate=1.0, max_depth=5, max_features=0.1,
                            min_samples_leaf=2, min_samples_split=20,
                            n_estimators=50)
-```
 
 ---
 
@@ -2526,7 +2436,6 @@ plt.show()
 ```
 
 #### Output:
-```
 Recall on train and validation set
 0.5613330181990073
 0.47459629775502166
@@ -2538,7 +2447,6 @@ Precision on train and validation set
 Accuracy on train and validation set
 0.7783359497645211
 0.7234432234432234
-```
 
 ---
 
@@ -2549,7 +2457,6 @@ adaboost.fit(X_train_un, y_train_un)
 ```
 
 #### Output:
-```
 Recall on test set
 0.4781323877068558
 
@@ -2558,7 +2465,6 @@ Precision on test set
 
 Accuracy on test set
 0.7421507064364207
-```
 
 ---
 
@@ -2570,7 +2476,6 @@ pred_val = adaboost.predict(X_val)
 ```
 
 #### Output:
-```
 Recall on test set
 0.516548463356974
 
@@ -2579,7 +2484,6 @@ Precision on test set
 
 Accuracy on test set
 0.7468602825745683
-```
 
 ---
 
@@ -2591,7 +2495,6 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output:
-```
 Recall on test set
 0.5135933806146572
 
@@ -2600,7 +2503,6 @@ Precision on test set
 
 Accuracy on test set
 0.7315541601255887
-```
 
 ---
 
@@ -2615,7 +2517,7 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images\image_35.png
+![Generated Plot](extracted_images_beta\image_35.png
 
 ---
 
