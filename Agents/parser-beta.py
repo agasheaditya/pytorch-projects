@@ -170,7 +170,10 @@ def generate_markdown(parsed_data, output_md="submission_report-beta.md"):
             # Write image if present
             if block["image_path"]:
                 f.write("#### Output Image:\n")
-                f.write(f"![Generated Plot]({block['image_path']})\n\n")
+                # breakpoint()
+                img_local_path = block['image_path'].split("\\")
+                img_local_path = img_local_path[0] + "/" + img_local_path[-1]
+                f.write(f"![Generated Plot]({img_local_path})\n\n")
 
             # Add spacing between blocks
             f.write("---\n\n")

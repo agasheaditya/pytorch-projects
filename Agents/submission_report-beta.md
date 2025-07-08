@@ -274,7 +274,7 @@ print(f"Number of negative entries: {negative_count}")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_1.png)
+![Generated Plot](extracted_images_beta/image_1.png)
 
 ---
 
@@ -321,7 +321,7 @@ for col in categorical_cols:
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_2.png)
+![Generated Plot](extracted_images_beta/image_2.png)
 
 ---
 
@@ -441,7 +441,7 @@ histogram_boxplot(data, "education_of_employee", figsize=(15, 10))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_3.png)
+![Generated Plot](extracted_images_beta/image_3.png)
 
 ---
 
@@ -481,7 +481,7 @@ histogram_boxplot(data, "region_of_employment", figsize=(15, 10))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_4.png)
+![Generated Plot](extracted_images_beta/image_4.png)
 
 ---
 
@@ -788,7 +788,7 @@ stacked_barplot(data, "continent", "case_status")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_5.png)
+![Generated Plot](extracted_images_beta/image_5.png)
 
 ---
 
@@ -798,7 +798,7 @@ distribution_plot_wrt_target(data, "has_job_experience", "case_status")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_6.png)
+![Generated Plot](extracted_images_beta/image_6.png)
 
 ---
 
@@ -808,7 +808,7 @@ stacked_barplot(data, "has_job_experience", "case_status")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_7.png)
+![Generated Plot](extracted_images_beta/image_7.png)
 
 ---
 
@@ -899,7 +899,7 @@ sns.boxplot(data=data, x='case_status', y='education_of_employee');
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_8.png)
+![Generated Plot](extracted_images_beta/image_8.png)
 
 ---
 
@@ -924,7 +924,7 @@ sns.boxplot(data=data, x='unit_of_wage', y='case_status');
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_9.png)
+![Generated Plot](extracted_images_beta/image_9.png)
 
 ---
 
@@ -948,7 +948,7 @@ y = data["case_status"]
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_10.png)
+![Generated Plot](extracted_images_beta/image_10.png)
 
 ---
 
@@ -976,7 +976,7 @@ y.head()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_11.png)
+![Generated Plot](extracted_images_beta/image_11.png)
 
 ---
 
@@ -1003,7 +1003,7 @@ print(100*y_test.value_counts(normalize=True))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_12.png)
+![Generated Plot](extracted_images_beta/image_12.png)
 
 ---
 
@@ -1086,7 +1086,7 @@ dtree1.fit(X_train, y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_13.png)
+![Generated Plot](extracted_images_beta/image_13.png)
 
 ---
 
@@ -1110,7 +1110,7 @@ dtree1_train_perf
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_14.png)
+![Generated Plot](extracted_images_beta/image_14.png)
 
 ---
 
@@ -1170,7 +1170,7 @@ plt.show()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_15.png)
+![Generated Plot](extracted_images_beta/image_15.png)
 
 ---
 
@@ -1234,7 +1234,7 @@ dtree2.fit(X_train, y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_16.png)
+![Generated Plot](extracted_images_beta/image_16.png)
 
 ---
 
@@ -1270,7 +1270,7 @@ confusion_matrix_sklearn(dtree2, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_17.png)
+![Generated Plot](extracted_images_beta/image_17.png)
 
 ---
 
@@ -1296,7 +1296,7 @@ bagging_estimator.fit(X_train,y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_18.png)
+![Generated Plot](extracted_images_beta/image_18.png)
 
 ---
 
@@ -1334,7 +1334,7 @@ confusion_matrix_sklearn(bagging_estimator, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_19.png)
+![Generated Plot](extracted_images_beta/image_19.png)
 
 ---
 
@@ -1360,7 +1360,7 @@ rf_estimator.fit(X_train,y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_20.png)
+![Generated Plot](extracted_images_beta/image_20.png)
 
 ---
 
@@ -1406,7 +1406,7 @@ confusion_matrix_sklearn(rf_estimator, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_21.png)
+![Generated Plot](extracted_images_beta/image_21.png)
 
 ---
 
@@ -1431,7 +1431,7 @@ adaboost.fit(X_train,y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_22.png)
+![Generated Plot](extracted_images_beta/image_22.png)
 
 ---
 
@@ -1562,7 +1562,7 @@ confusion_matrix_sklearn(gboost, X_test, y_test)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_23.png)
+![Generated Plot](extracted_images_beta/image_23.png)
 
 ---
 
@@ -1615,7 +1615,7 @@ xgboost_train_perf
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_24.png)
+![Generated Plot](extracted_images_beta/image_24.png)
 
 ---
 
@@ -1689,7 +1689,7 @@ print("*" * 80)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_25.png)
+![Generated Plot](extracted_images_beta/image_25.png)
 
 ---
 
@@ -1746,7 +1746,7 @@ pred_val = dtree2.predict(X_val)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_26.png)
+![Generated Plot](extracted_images_beta/image_26.png)
 
 ---
 
@@ -1805,7 +1805,7 @@ bagging_estimator.fit(X_train_over, y_train_over)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_27.png)
+![Generated Plot](extracted_images_beta/image_27.png)
 
 ---
 
@@ -1873,7 +1873,7 @@ plt.show()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_28.png)
+![Generated Plot](extracted_images_beta/image_28.png)
 
 ---
 
@@ -1950,7 +1950,7 @@ plt.show()
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_29.png)
+![Generated Plot](extracted_images_beta/image_29.png)
 
 ---
 
@@ -2005,7 +2005,7 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_30.png)
+![Generated Plot](extracted_images_beta/image_30.png)
 
 ---
 
@@ -2061,7 +2061,7 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_31.png)
+![Generated Plot](extracted_images_beta/image_31.png)
 
 ---
 
@@ -2120,7 +2120,7 @@ pred_val = xgboost.predict(X_val)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_32.png)
+![Generated Plot](extracted_images_beta/image_32.png)
 
 ---
 
@@ -2180,7 +2180,7 @@ X_train_un, y_train_un = rus.fit_resample(X_train, y_train)
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_33.png)
+![Generated Plot](extracted_images_beta/image_33.png)
 
 ---
 
@@ -2245,7 +2245,7 @@ print(recall_score(y_val, pred_val))
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_34.png)
+![Generated Plot](extracted_images_beta/image_34.png)
 
 ---
 
@@ -2517,7 +2517,7 @@ plt.ylabel("Actual Values")
 ```
 
 #### Output Image:
-![Generated Plot](extracted_images_beta\image_35.png)
+![Generated Plot](extracted_images_beta/image_35.png)
 
 ---
 
