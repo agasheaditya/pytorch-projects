@@ -6,7 +6,6 @@ import os
 import json
 import re
 
-
 # -----------------------------
 # Step 1: Code Cell Extraction
 # -----------------------------
@@ -91,43 +90,66 @@ def parse_notebook(html_path, output_json="parsed_output-beta.json"):
     """
     Main function to parse notebook and save results in JSON format.
     """
+
     with open(html_path, "r", encoding="utf-8") as f:
         html_content = f.read()
-
     soup = BeautifulSoup(html_content, "html.parser")
 
-    code_cells = extract_code_cells(soup)
-    output_cells = extract_output_cells(soup)
-    image_paths = extract_and_save_images(html_path)
-
     parsed_data = []
-    image_index = 0
+    image_paths = []
+    image_counter = 1
 
-    for idx, code in enumerate(code_cells):
-        if idx < len(output_cells):
-            output = output_cells[idx]
-        else:
-            output = ""
+    # Sequentially walk through each code cell and its output
+    for cell in soup.find_all("div", class_=re.compile(r"jp-CodeCell")):
+        code_block = cell.find("pre")
+        code = code_block.get_text().strip() if code_block else ""
 
-        # Check if output is an image tag
-        if isinstance(output, str) and output.startswith("<img"):
-            item = {
-                "code": code,
-                "output": "",
-                "image_path": image_paths[image_index] if image_index < len(image_paths) else None
-            }
-            if image_index < len(image_paths):
-                image_index += 1
-        else:
-            # Strip DataFrame prefix before saving to JSON
-            if isinstance(output, str) and output.startswith("DataFrame Output:"):
-                output = output.replace("DataFrame Output:\n", "")
-            item = {
-                "code": code,
-                "output": output,
-                "image_path": None
-            }
+        # Find output wrapper within this cell
+        output_wrapper = cell.find("div", class_=re.compile(r"jp-Cell-outputWrapper"))
+        output = ""
+        image_path = None
+        if output_wrapper:
+            # DataFrame/table output
+            html_table = output_wrapper.find("table", class_="dataframe")
+            if html_table:
+                table_html = str(html_table)
+                try:
+                    df = pd.read_html(StringIO(table_html))[0]
+                    # Convert DataFrame to markdown table
+                    output = df.head().to_markdown(index=False)
+                except Exception:
+                    output = "DataFrame Output: Failed to parse"
+            else:
+                # Plain text output
+                pre_tag = output_wrapper.find("pre")
+                img_tag = output_wrapper.find("img")
+                if pre_tag:
+                    output = pre_tag.get_text().strip()
+                elif img_tag:
+                    src = img_tag.get("src", "")
+                    if src.startswith("data:image/"):
+                        # Save base64 image
+                        header, encoded = src.split(",", 1)
+                        image_data = base64.b64decode(encoded)
+                        folder = "extracted_images_beta"
+                        os.makedirs(folder, exist_ok=True)
+                        filename = os.path.join(folder, f"image_{image_counter}.png")
+                        with open(filename, "wb") as img_file:
+                            img_file.write(image_data)
+                        image_path = filename
+                        image_paths.append(filename)
+                        image_counter += 1
+                        output = ""
+                    else:
+                        output = str(img_tag)
+                else:
+                    output = ""
 
+        item = {
+            "code": code,
+            "output": output,
+            "image_path": image_path
+        }
         parsed_data.append(item)
 
     # Save to JSON
@@ -149,6 +171,7 @@ def generate_markdown(parsed_data, output_md="submission_report-beta.md"):
         f.write("#Student Submission Report\n\n")
         f.write("This report reconstructs the Jupyter Notebook submission from parsed HTML.\n\n")
 
+
         for idx, block in enumerate(parsed_data):
             # Write code block
             f.write(f"### Code Block {idx + 1}\n")
@@ -159,8 +182,8 @@ def generate_markdown(parsed_data, output_md="submission_report-beta.md"):
             # Write output if it exists
             if block["output"]:
                 f.write("#### Output:\n")
-                if block["output"].startswith("   Unnamed: 0 ") or '\n' in block["output"]:
-                    # Assume it's a DataFrame or tabular output
+                # If output looks like a markdown table (starts with '|')
+                if block["output"].startswith("|"):
                     f.write(block["output"] + "\n\n")
                 else:
                     f.write("```\n")
@@ -170,9 +193,7 @@ def generate_markdown(parsed_data, output_md="submission_report-beta.md"):
             # Write image if present
             if block["image_path"]:
                 f.write("#### Output Image:\n")
-                # breakpoint()
-                img_local_path = block['image_path'].split("\\")
-                img_local_path = img_local_path[0] + "/" + img_local_path[-1]
+                img_local_path = block['image_path'].replace("\\", "/")
                 f.write(f"![Generated Plot]({img_local_path})\n\n")
 
             # Add spacing between blocks
