@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.zip
+*creds.py
 
 # C extensions
 *.so

@@ -3,6 +3,12 @@ import re
 from langchain.tools import Tool
 from langchain.agents import initialize_agent, AgentType
 from langchain_groq import ChatGroq
+import pandas as pd
+from gen_ai_hub.proxy.langchain.init_models import init_llm
+from creds import env_vars
+from collections import ChainMap
+import os
+import re  
 
 class MarkdownAgent:
     def __init__(self, md_path):
@@ -73,10 +79,14 @@ tools = [summarize_tool, find_text_tool, extract_code_output_tool]
 
 # Set up Groq Llama 3 LLM
 ## TODO: replace this with more powerfull LLM with more token limit and better performance (gpt4, 40, 4.1, etc.)
-llm = ChatGroq(
-    groq_api_key="",  # Replace with your Groq API key
-    model_name="llama3-70b-8192"       # Or "llama3-8b-8192" for smaller model
-)
+# llm = ChatGroq(
+#     groq_api_key="",  # Replace with your Groq API key
+#     model_name="llama3-70b-8192"       # Or "llama3-8b-8192" for smaller model
+# )
+
+os.environ.update(env_vars)
+
+llm = init_llm('gpt-4', temperature=0., max_tokens=1000)
 
 # Initialize the agent
 agent = initialize_agent(
