@@ -3,5 +3,6 @@ langgraph==0.5.1
 sentence-transformers==5.0.0
 pandas==2.3.0
 matplotlib==3.10.3
+tabulate
 lxml
 openpyxl
