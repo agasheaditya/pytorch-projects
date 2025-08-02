@@ -9,6 +9,8 @@ from creds import env_vars
 from collections import ChainMap
 import os
 import re  
+os.environ.update(env_vars)
+
 
 class MarkdownAgent:
     def __init__(self, md_path):
@@ -84,9 +86,8 @@ tools = [summarize_tool, find_text_tool, extract_code_output_tool]
 #     model_name="llama3-70b-8192"       # Or "llama3-8b-8192" for smaller model
 # )
 
-os.environ.update(env_vars)
 
-llm = init_llm('gpt-4', temperature=0., max_tokens=1000)
+llm = init_llm('gpt-4o', temperature=0.1, max_tokens=10000)
 
 # Initialize the agent
 agent = initialize_agent(
